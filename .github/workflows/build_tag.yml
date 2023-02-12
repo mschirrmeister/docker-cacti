@@ -34,7 +34,7 @@ jobs:
         with:
           images: mschirrmeister/cacti
           tags: |
-            type=raw,value=latest,enable=${{ endsWith(GitHub.ref, 'main') }}
+            type=raw,value=latest,enable=${{ endsWith(GitHub.ref, 'master') }}
             type=ref,event=tag
             type=semver,pattern={{version}}
             type=semver,pattern={{major}}.{{minor}}

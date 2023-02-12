@@ -11,7 +11,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    if: GitHub.ref == 'refs/heads/main'
+    if: GitHub.ref == 'refs/heads/master'
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -26,7 +26,7 @@ jobs:
         with:
           images: mschirrmeister/cacti
           tags: |
-            type=raw,value=latest,enable=${{ endsWith(GitHub.ref, 'main') }}
+            type=raw,value=latest,enable=${{ endsWith(GitHub.ref, 'master') }}
           flavor: |
             latest=false
 
